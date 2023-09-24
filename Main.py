@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 # Saves the Spotify data as a Pandas frame
 data = pd.read_csv('cost_of_living.csv')
 
-# This limits the results down to just the country name and their cost of living score
+# This limits the results down to just the country name and their cost of living score. Failed Attempt
 USA = data.loc[data['Countries'] == 'USA', 'Countries']
 USA_Cost = data.loc[data['Countries'] == 'USA', 'Cost of living, 2017']
 UK = data.loc[data['Countries'] == 'UK', ['Countries', 'Cost of living, 2017']]
