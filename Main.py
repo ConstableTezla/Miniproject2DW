@@ -17,5 +17,38 @@ China = data.loc[data['Countries'] == 'China', ['Countries', 'Cost of living, 20
 # Testing purposes
 All = [USA, UK, Canada, Japan, Germany, Russia, China]
 
-plt.plot(USA, USA_Cost)
-plt.show()
+def getCountry(countries):
+    # Pulls the country for the X axis
+    Name = data.loc[data['Countries'] == countries, 'Countries']
+
+    # Create an empty list for the countries
+    countryList = []
+
+    # Loop through Country names and add them to the list
+    for country in Name['Countries']:
+        countryList.append(country)
+
+    return countryList
+
+def getNames():
+
+    Countries = []
+
+    print("Please enter 5 countries to check the cost of living in.")
+
+    for i in range(1, 6):
+
+        while True:
+            print("Enter Country name " + str(i))
+            Country = input("> ")
+
+            try:
+                print("Checking Country name")
+                data.describe()
+                Countries.append(Country)
+                print("Valid Country name!")
+                break
+            except:
+                print("This is not a valid country name. Please check your spelling and try again!")
+
+    return Countries
