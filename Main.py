@@ -1,5 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+from pathlib import Path
+import numpy as np
 
 # Saves the Spotify data as a Pandas frame
 data = pd.read_csv('cost_of_living.csv')
@@ -44,7 +46,8 @@ def getNames():
 
             try:
                 print("Checking Country name")
-                data.describe()
+                name = data
+                name.discribe()
                 Countries.append(Country)
                 print("Valid Country name!")
                 break
@@ -52,3 +55,35 @@ def getNames():
                 print("This is not a valid country name. Please check your spelling and try again!")
 
     return Countries
+
+def getCost(COL):
+    # Pulls the cost of living for the Y axis
+    Cost = data.loc[data['Countries'] == COL, 'Cost of living, 2017']
+
+    # Create a list of costs for each Country
+    countryCost = []
+
+    for price in Cost['Countries']:
+        countryCost.append(price)
+
+    return countryCost
+
+def printGraph(Country):
+
+    countryNames = np.array(getCountry())
+
+    COL =
+
+    plt.plot(countryNames, )
+
+# Start of program
+
+# Creating charts folder
+
+try:
+    Path("Charts").mkdir()
+except FileExistsError:
+    pass
+
+for name in getNames():
+    getCountry(Country)
