@@ -43,8 +43,8 @@ def getNames():
 
             try:
                 print("Checking Country name")
-                name = data
-                name.discribe()
+                country_name = data.loc[data['Countries'], 'Countries']
+                country_name.discribe()
                 Countries.append(Country)
                 print("Valid Country name!")
                 break
